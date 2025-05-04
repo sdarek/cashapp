@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Text, View } from "react-native";
+import * as React from 'react';
+import { Text, View } from 'react-native';
 import { PaperProvider, Button } from 'react-native-paper';
 
 export default function Index() {
@@ -7,12 +7,12 @@ export default function Index() {
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <PaperProvider>
-        <Text style={{ marginTop: 50, textAlign: 'center'}}>Hello wariaciku</Text>
+        <Text style={{ marginTop: 50, textAlign: 'center' }}>Hello wariaciku</Text>
         <Button
           mode="contained"
           onPress={() => console.log('Wariacie kliknales')}
