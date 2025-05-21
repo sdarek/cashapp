@@ -6,5 +6,7 @@ import pl.cashapp.model.User;
 
 @ApplicationScoped
 public class UserRepository implements PanacheRepository<User> {
-
+    public User findByEmail(String email) {
+        return find("email", email).firstResult();
+    }
 }
