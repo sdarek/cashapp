@@ -40,4 +40,19 @@ public class AuthResource {
 
         userRepository.persist(user);
     }
+
+    @POST
+    @Path("/login")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
+    public Map<String, String> login(LoginRequest request) {
+        User user = userRepository.findByEmail(request.email);
+        if (user == null || !BCrypt.checkpw(request.password, user.passwordHash)) {
+            throw new WebApplicationException("BLedne dane debilu", 400);
+        }
+
+        String token = tokenGenerator.generate(user);
+
+        return Map.of("token", token);
+    }
 }
