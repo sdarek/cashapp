@@ -1,13 +1,12 @@
 import { Link } from 'expo-router';
-import { View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Button, Surface } from 'react-native-paper';
 
 export default function Index() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Link href="/test" asChild>
+    <Surface style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Link href="/auth/register" asChild>
         <Button mode="contained">Ogien</Button>
       </Link>
-    </View>
+    </Surface>
   );
 }
